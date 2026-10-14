@@ -1,29 +1,39 @@
-# Welcome to your Lovable project
+# Vibh-Anu CRM
 
-This project was built with [Lovable](https://lovable.dev).
+A five-department lead workflow (Marketing → Communication → Vigilance → Support → Sales) with role-based access, a private audio bucket and a verified claim step for Sales.
 
-## Build with Lovable
+## Stack
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+TanStack Start · React · TypeScript · Tailwind CSS · Supabase (auth, Postgres, storage)
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+## Run locally
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+npm install
 npm run dev
 ```
 
-## Built with
+## Environment variables
 
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
+Set these in `.env` locally and in your hosting settings:
+
+```
+VITE_SUPABASE_URL=
+VITE_SUPABASE_PUBLISHABLE_KEY=
+VITE_SUPABASE_PROJECT_ID=
+SUPABASE_URL=
+SUPABASE_PUBLISHABLE_KEY=
+SUPABASE_PROJECT_ID=
+```
+
+The `VITE_*` values are baked in at build time, so set them before deploying.
+
+## Deploy (Vercel)
+
+Import the repo, keep the preset as **Other**, add the environment variables and deploy.
+
+## Tests
+
+```sh
+npm test
+```

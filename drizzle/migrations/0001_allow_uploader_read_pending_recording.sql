@@ -1,0 +1,1 @@
+CREATE POLICY read_own_pending_audio ON storage.objects FOR SELECT TO authenticated USING(bucket_id='lead-audio' AND public.crm_role()='vigilance' AND (storage.foldername(name))[1]=auth.uid()::text AND EXISTS(SELECT 1 FROM public.leads WHERE id::text=(storage.foldername(name))[2] AND stage='vigilance'));

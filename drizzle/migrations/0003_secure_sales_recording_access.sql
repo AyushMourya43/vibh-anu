@@ -1,0 +1,4 @@
+CREATE FUNCTION public.crm_can_read_audio(p_path text) RETURNS boolean LANGUAGE sql STABLE SECURITY DEFINER SET search_path=public AS $$ SELECT public.crm_role() IS NOT NULL AND EXISTS(SELECT 1 FROM public.leads l WHERE l.audio_path=p_path AND (public.crm_role()<>'sales' OR (l.stage='sales' AND (l.claimed_by IS NULL OR l.claimed_by=auth.uid())))) $$;
+REVOKE ALL ON FUNCTION public.crm_can_read_audio(text) FROM PUBLIC,anon;
+GRANT EXECUTE ON FUNCTION public.crm_can_read_audio(text) TO authenticated;
+ALTER POLICY read_department_audio ON storage.objects USING(bucket_id='lead-audio' AND public.crm_can_read_audio(storage.objects.name));

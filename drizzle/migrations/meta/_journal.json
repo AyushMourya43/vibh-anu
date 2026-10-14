@@ -1,0 +1,34 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1791970220262,
+      "tag": "0000_crm_department_workflow",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1791970837703,
+      "tag": "0001_allow_uploader_read_pending_recording",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1791970913301,
+      "tag": "0002_qualify_audio_object_paths",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1791971036352,
+      "tag": "0003_secure_sales_recording_access",
+      "breakpoints": true
+    }
+  ]
+}
